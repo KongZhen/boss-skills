@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.empty-promises",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "团队要求加薪，用画饼老板的风格承诺点什么，但不涉及真正的承诺",
+      "expected_output": "充满诱人but vague的承诺，80%hope 20%actual plan，buried insight关于真实的财务限制"
+    },
+    {
+      "id": 2,
+      "prompt": "Can you commit to getting us better tools and a bigger budget for the next sprint?",
+      "expected_output": "Promise-heavy language about 'exploring options', 'looking into budget', with vague timeline, buried signal about actual constraints"
+    },
+    {
+      "id": 3,
+      "prompt": "用画大饼的语气跟小李说他有晋升的机会，让他保持积极性",
+      "expected_output": "充满诱人前景的长篇幅回答，buried insight关于实际的晋升标准"
+    }
+  ]
+}

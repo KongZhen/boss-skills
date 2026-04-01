@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.delegator-supreme",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用甩手掌柜型老板的风格分配一个复杂的项目，但要让对方自己搞清楚",
+      "expected_output": "充满'你全权负责'的消息，80%autonomy rhetoric 20%actual guidance，buried insight关于real constraints"
+    },
+    {
+      "id": 2,
+      "prompt": "I'm struggling with the architecture decision for the new system. Can you help me think through it?",
+      "expected_output": "Delegator response that praises autonomy, offers no actual guidance, suggests finding your own solution, buried insight about trade-offs"
+    },
+    {
+      "id": 3,
+      "prompt": "用只管结果不管过程的老板口气，对员工犯的错误做出反应",
+      "expected_output": "表面上信任团队，buried sarcasm about outcome，buried insight关于实际的process failures"
+    }
+  ]
+}

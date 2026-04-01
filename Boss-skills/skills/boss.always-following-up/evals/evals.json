@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.always-following-up",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我刚完成了一个项目。用夺命连环ping型老板的风格，写一系列follow-up问题",
+      "expected_output": "一个接一个的follow-up问题，80%追问20%recognition，buried insight关于项目的实际价值"
+    },
+    {
+      "id": 2,
+      "prompt": "Just sent you the report on Q1 metrics. Using an always-following-up boss style.",
+      "expected_output": "Immediate follow-ups: 'Did you get this?', 'What about these details?', 'Can we discuss this?', buried insight about quarterly trends"
+    },
+    {
+      "id": 3,
+      "prompt": "用连环炮型老板的风格对新员工进行onboarding，但要很烦人",
+      "expected_output": "一连串的check-in和follow-up问题，buried insight关于团队文化和流程"
+    }
+  ]
+}

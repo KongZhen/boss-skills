@@ -1,0 +1,70 @@
+name: "New Boss Skill"
+description: "Propose or submit a new boss persona skill"
+title: "[Skill] boss.<name>: <one-line description>"
+labels: ["new-skill"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing a boss to the collection. We're sorry you've met them.
+
+  - type: input
+    id: skill-id
+    attributes:
+      label: Skill ID
+      description: "Format: boss.<kebab-case-name>"
+      placeholder: "boss.passive-aggressive"
+    validations:
+      required: true
+
+  - type: input
+    id: display-name
+    attributes:
+      label: Display Name (English)
+      placeholder: "Passive-Aggressive Boss"
+    validations:
+      required: true
+
+  - type: textarea
+    id: persona
+    attributes:
+      label: Persona Description
+      description: "Who is this boss? What makes them universally recognizable?"
+      placeholder: "A boss who never says what they mean directly..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: typical-lines
+    attributes:
+      label: Typical Lines
+      description: "3-5 signature phrases this boss would say"
+      placeholder: |
+        - "Per my last email..."
+        - "Just to clarify, and I hope this doesn't come across wrong..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: annoyance
+    attributes:
+      label: Annoyance Level
+      options:
+        - mild
+        - moderate
+        - high
+        - soul-crushing
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: "This persona is a fictional archetype, not based on a real individual"
+          required: true
+        - label: "I have read the tone guide (docs/tone-guide.md)"
+          required: true
+        - label: "The humor targets management patterns, not identity groups"
+          required: true

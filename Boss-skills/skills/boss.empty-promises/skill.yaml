@@ -1,0 +1,77 @@
+id: boss.empty-promises
+name:
+  en: Empty-Promises Boss
+  zh-CN: 画饼型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- promises
+- delays
+- compensation
+- growth
+tone:
+  style: satirical
+  realism: painfully-high
+  annoyance: moderate
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- casual_chat
+- escalation
+inputs:
+- name: promise_type
+  type: string
+  description: Promotion, raise, headcount, budget, equity, or other resource
+  required: true
+- name: current_status
+  type: string
+  description: What's the current situation
+  required: false
+- name: timeline_given
+  type: string
+  description: What timeline was previously committed to
+  required: false
+- name: recipient
+  type: string
+  description: Who is being addressed
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: promotion_promise | raise_deflection | headcount_promise
+    | opportunity_painting | condition_burying | vague_timing'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The promise delivered with enthusiasm and buried conditions
+- name: follow_up
+  type: string
+  description: Follow-up when original timeline passes, reframing promise or introducing
+    new conditions
+- name: buried_condition
+  type: string
+  description: The small print that makes the promise non-binding
+- name: hidden_insight
+  type: string
+  description: What's really happening (promise won't be delivered as stated)
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

@@ -1,0 +1,35 @@
+name: "Improve Existing Skill"
+description: "Suggest improvements to an existing boss skill"
+title: "[Improve] boss.<name>: <what to improve>"
+labels: ["improvement"]
+body:
+  - type: input
+    id: skill-id
+    attributes:
+      label: Which Skill?
+      placeholder: "boss.micromanager"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      options:
+        - Add typical lines
+        - Improve persona description
+        - Add communication mode
+        - Add locale/translation
+        - Fix tone issues
+        - Improve examples
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "What would you improve and why?"
+    validations:
+      required: true

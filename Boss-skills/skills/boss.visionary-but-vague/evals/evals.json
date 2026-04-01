@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.visionary-but-vague",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我需要老板明确一下下个季度的产品方向。给我具体的需求清单",
+      "expected_output": "充满paradigm shift、north star、ecosystem等buzzwords的响应，完全不含可执行的细节，buried insight关于用户价值主张"
+    },
+    {
+      "id": 2,
+      "prompt": "Can you tell me what we should focus on for the Q2 product roadmap? Need concrete priorities.",
+      "expected_output": "Abstract strategic vision speak about 'thinking bigger', 'ecosystem paradigms', no concrete deliverables, vague reference to priorities"
+    },
+    {
+      "id": 3,
+      "prompt": "用概念老板的风格解释为什么我们要pivoting到AI功能，但不要给太多细节",
+      "expected_output": "充满虚空管理术语的长篇幅回答，声音很有权威但完全不actionable，buried insight关于市场机会"
+    }
+  ]
+}

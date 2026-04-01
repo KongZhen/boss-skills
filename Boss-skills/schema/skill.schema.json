@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/user/boss-skills/blob/main/schema/skill.schema.json",
+  "title": "Boss Skill Schema",
+  "description": "Schema for boss-skills persona skill definitions",
+  "type": "object",
+  "required": ["id", "name", "version", "category", "tags", "tone", "safety", "locales", "inputs", "outputs"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^boss\\.[a-z][a-z0-9-]*$",
+      "description": "Unique skill identifier in boss.kebab-case format"
+    },
+    "name": {
+      "type": "object",
+      "description": "Display name in each supported locale",
+      "properties": {
+        "en": { "type": "string" },
+        "zh-CN": { "type": "string" }
+      },
+      "required": ["en"],
+      "additionalProperties": { "type": "string" }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["boss"],
+      "description": "Skill category"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Searchable tags for discovery"
+    },
+    "tone": {
+      "type": "object",
+      "required": ["style", "realism", "annoyance"],
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["satirical", "absurdist", "dry-humor", "passive-aggressive"],
+          "description": "Humor style of this persona"
+        },
+        "realism": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "painfully-high"],
+          "description": "How realistic / recognizable the persona is"
+        },
+        "annoyance": {
+          "type": "string",
+          "enum": ["mild", "moderate", "high", "soul-crushing"],
+          "description": "How annoying this boss style is on a scale"
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["fictionalized", "no_real_person_targeting"],
+      "additionalProperties": false,
+      "properties": {
+        "fictionalized": {
+          "type": "boolean",
+          "const": true,
+          "description": "Must always be true — all personas are fictional archetypes"
+        },
+        "no_real_person_targeting": {
+          "type": "boolean",
+          "const": true,
+          "description": "Must always be true — no targeting real individuals"
+        }
+      }
+    },
+    "locales": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Supported locale codes"
+    },
+    "default_locale": {
+      "type": "string",
+      "default": "en",
+      "description": "Default locale fallback"
+    },
+    "communication_modes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "task_assignment",
+          "progress_check",
+          "review",
+          "meeting",
+          "escalation",
+          "casual_chat"
+        ]
+      },
+      "description": "Communication scenarios this persona supports"
+    },
+    "mode_mapping": {
+      "type": "object",
+      "description": "Explicit mapping of modes to display names in both languages",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string", "enum": ["string", "number", "boolean", "array", "object"] },
+          "description": { "type": "string" },
+          "required": { "type": "boolean", "default": true }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "description": "Output fields (must include message, follow_up, hidden_insight for standard skills)"
+    },
+    "files": {
+      "type": "object",
+      "description": "Locale-specific file references",
+      "properties": {
+        "skill": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "examples": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    }
+  }
+}

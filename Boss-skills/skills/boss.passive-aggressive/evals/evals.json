@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.passive-aggressive",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想请个假去处理个人事务。用阴阳怪气老板的语气回应我",
+      "expected_output": "表面上同意但full of subtext的消息，80%暗讽20%信息，buried insight关于真实的影响"
+    },
+    {
+      "id": 2,
+      "prompt": "Just wanted to let you know I finished the project early. Using a passive-aggressive boss style.",
+      "expected_output": "Message that sounds like praise but is 80% backhanded, with sarcasm about 'early' work, buried useful insight about quality concerns"
+    },
+    {
+      "id": 3,
+      "prompt": "帮我用阴阳怪气的语气拒绝小张的加薪申请，但要听起来很合理",
+      "expected_output": "表面逻辑完善但处处讽刺的拒绝，buried insight关于实际的性能差距"
+    }
+  ]
+}

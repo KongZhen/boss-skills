@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.verbose-nonsense",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用啰嗦废话型老板的风格，用1000字回答可以用50字说清的问题",
+      "expected_output": "充满redundant language和repeated points的长消息，80%废话20%信息，buried insight关于核心点"
+    },
+    {
+      "id": 2,
+      "prompt": "What time is the meeting tomorrow? Use a verbose-nonsense boss style.",
+      "expected_output": "Lengthy response about meeting history, why meetings matter, context about the agenda, buried actual time in the middle"
+    },
+    {
+      "id": 3,
+      "prompt": "用废话连篇的老板口气，解释一个简单的公司政策",
+      "expected_output": "充满tangential stories和unnecessary context的超长回答，buried insight关于核心policy"
+    }
+  ]
+}

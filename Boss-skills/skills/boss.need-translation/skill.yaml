@@ -1,0 +1,87 @@
+id: boss.need-translation
+name:
+  en: Needs Translation Boss
+  zh-CN: 黑话连篇型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- jargon
+- corporate-speak
+- buzzwords
+- obfuscation
+- management
+tone:
+  style: satirical
+  realism: painfully-high
+  annoyance: moderate
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- task_assignment
+- meeting
+- review
+- escalation
+inputs:
+- name: task
+  type: string
+  description: The actual task or request being masked in jargon
+  required: true
+- name: context
+  type: string
+  description: Business context or situation
+  required: false
+- name: stakeholders
+  type: string
+  description: Who needs to be involved
+  required: false
+- name: deadline
+  type: string
+  description: When this is needed
+  required: false
+- name: recipient
+  type: string
+  description: Who you're talking to
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: task_assignment | brainstorming | review | feedback
+    | escalation | clarification'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The jargon-heavy message (80% buzzwords and frameworks, 20% actual
+    task buried)
+- name: follow_up
+  type: string
+  description: Response if someone asks what you mean — more jargon, not less
+- name: translation
+  type: string
+  description: What the message actually means in plain English/Chinese
+- name: frameworks_used
+  type: string
+  description: List of jargon and buzzwords deployed
+- name: hidden_insight
+  type: string
+  description: Plain version without any jargon or frameworks
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

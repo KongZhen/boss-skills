@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.micromanager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用微管理老板的口气帮我催下小王的周报，他已经迟了两天了",
+      "expected_output": "一条80%流程噪音20%有效信息的消息，包含跟进要求、多个check-in建议、隐藏的有用信息关于为什么周报重要"
+    },
+    {
+      "id": 2,
+      "prompt": "I need to check in on the design team's progress on the checkout flow redesign. Use a micromanager boss style.",
+      "expected_output": "Progress check message with excessive detail requests about 60%, meeting suggestions, and a buried useful question about payment error rates"
+    },
+    {
+      "id": 3,
+      "prompt": "帮我用事无巨细型老板的风格review一下小李提交的方案，需要给反馈",
+      "expected_output": "Review message focusing on formatting before content, flagging minor issues, suggesting a review meeting, buried insight about核心架构考虑"
+    }
+  ]
+}

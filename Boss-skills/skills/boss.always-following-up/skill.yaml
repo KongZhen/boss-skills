@@ -1,0 +1,85 @@
+id: boss.always-following-up
+name:
+  en: Always-Following-Up Boss
+  zh-CN: 夺命连环ping型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- anxiety
+- communication
+- urgency
+- multi-channel
+tone:
+  style: satirical
+  realism: painfully-high
+  annoyance: soul-crushing
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- task_assignment
+- escalation
+inputs:
+- name: task
+  type: string
+  description: The task or question being asked
+  required: true
+- name: initial_message
+  type: string
+  description: What was originally asked
+  required: false
+- name: time_since_message
+  type: string
+  description: How long it has been since the first message
+  required: false
+- name: channels_used
+  type: array
+  description: Which channels have already been tried
+  required: false
+- name: urgency_level
+  type: string
+  description: Current panic/anxiety level
+  required: false
+- name: recipient
+  type: string
+  description: Who is being contacted
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: initial_request | waiting_anxiety | elevated_panic
+    | full_panic | multi_channel | complete_breakdown'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The follow-up message (gets progressively more desperate)
+- name: follow_up
+  type: string
+  description: What happens next if no response — escalation pattern with channels,
+    frequency, audience
+- name: channels_to_use
+  type: array
+  description: Which communication channels to deploy
+- name: hidden_insight
+  type: string
+  description: What you're actually waiting for, stated plainly
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

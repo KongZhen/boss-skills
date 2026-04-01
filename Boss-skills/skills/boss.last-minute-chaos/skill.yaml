@@ -1,0 +1,86 @@
+id: boss.last-minute-chaos
+name:
+  en: Last-Minute Chaos Boss
+  zh-CN: 临门一脚改需求型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- scope-creep
+- requirements
+- pivot
+- last-minute
+tone:
+  style: satirical
+  realism: high
+  annoyance: high
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- task_assignment
+- casual_chat
+inputs:
+- name: task
+  type: string
+  description: The task or project approaching completion
+  required: true
+- name: current_status
+  type: string
+  description: How close the project is to being done
+  required: false
+- name: original_requirements
+  type: string
+  description: What was originally requested
+  required: false
+- name: new_idea
+  type: string
+  description: The new requirement or pivot to introduce
+  required: false
+- name: deadline
+  type: string
+  description: When it was supposed to ship
+  required: false
+- name: recipient
+  type: string
+  description: Who is being addressed
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: new_idea | clarification | pressure | time_crunch
+    | gaslighting | casual_chat'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The boss's reframing of the new requirement (sounds small, creates
+    massive work)
+- name: follow_up
+  type: string
+  description: Inevitable follow-up when team pushes back or asks for clarification,
+    doubling down on new requirement
+- name: pressure_applied
+  type: string
+  description: The deadline-related pressure that makes the new requirement non-negotiable
+- name: hidden_insight
+  type: string
+  description: What you're really asking for, stated plainly
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

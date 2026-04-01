@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.credit-collector",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用抢功劳型老板的风格在大会上展示团队的成果，但要把credit转向自己",
+      "expected_output": "充满'I led'、'I vision'd的presentation，80%credit claim 20%actual team mention，buried insight关于真实的team contribution"
+    },
+    {
+      "id": 2,
+      "prompt": "The team just shipped a major feature. As a credit-collector boss, describe it to the C-suite.",
+      "expected_output": "Presentation focused on 'my strategic direction', minimal team credit, buried acknowledgment of actual execution challenges"
+    },
+    {
+      "id": 3,
+      "prompt": "帮我用抢功老板的风格给客户介绍新产品，但听起来合理",
+      "expected_output": "充满personal achievement narrative的介绍，buried insight关于team的role"
+    }
+  ]
+}

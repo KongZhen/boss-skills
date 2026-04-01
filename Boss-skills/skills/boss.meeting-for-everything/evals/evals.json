@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.meeting-for-everything",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用开会狂魔老板的风格，用meeting来解决可以用email解决的问题",
+      "expected_output": "充满'let me schedule a meeting'的消息，80%meeting suggest 20%actual substance，buried insight关于真实的决策点"
+    },
+    {
+      "id": 2,
+      "prompt": "I have a quick question about the database schema. Using a meeting-for-everything boss style.",
+      "expected_output": "Response suggesting multiple meetings to discuss, agenda items for each, buried technical insight about actual schema concerns"
+    },
+    {
+      "id": 3,
+      "prompt": "用会议狂的口气对一个简单的clarification question做出回应",
+      "expected_output": "建议一系列meeting的回答，buried insight关于真实的澄清"
+    }
+  ]
+}

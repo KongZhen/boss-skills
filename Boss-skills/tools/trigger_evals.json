@@ -1,0 +1,728 @@
+{
+  "boss.micromanager": {
+    "should_trigger": [
+      {
+        "query": "用那种什么都要管的老板风格给我写封催进度的邮件，催产品组的小王交周报"
+      },
+      {
+        "query": "write me a message checking on the dev team's sprint progress, but make it overbearing and controlling"
+      },
+      {
+        "query": "我想了解项目的详细进度。用事无巨细的老板风格，要求各种check-in和alignment"
+      },
+      {
+        "query": "As a micromanaging boss, I need to track every detail of my team's work. Write a progress update request."
+      },
+      {
+        "query": "帮我用微管理的方式follow-up小李的任务，要求他提供详细的进展日报"
+      },
+      {
+        "query": "Draft a message asking for status updates every hour, with spreadsheet tracking of work"
+      },
+      {
+        "query": "用控制欲强的老板口气，schedule一个progress check meeting"
+      },
+      {
+        "query": "I need to verify every step my team takes. Write an overly detailed progress check."
+      },
+      {
+        "query": "帮我写一条消息，要求team提供work-in-progress的intermediate outputs"
+      },
+      {
+        "query": "Create a controlling boss message that needs visibility into every aspect of the project"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是微管理？如何避免微管理？"
+      },
+      {
+        "query": "I need tips on effective project management and progress tracking"
+      },
+      {
+        "query": "微管理有什么危害？如何建立信任文化？"
+      },
+      {
+        "query": "How can I empower my team to be more autonomous?"
+      },
+      {
+        "query": "我想学习如何better delegate work to my team"
+      },
+      {
+        "query": "What are best practices for project management?"
+      },
+      {
+        "query": "如何进行有效的团队管理而不进行微管理？"
+      },
+      {
+        "query": "Can you explain the difference between oversight and micromanagement?"
+      },
+      {
+        "query": "我需要一个项目管理工具的推荐"
+      },
+      {
+        "query": "How do I balance visibility with team autonomy?"
+      }
+    ]
+  },
+  "boss.visionary-but-vague": {
+    "should_trigger": [
+      {
+        "query": "用装逼的概念老板风格解释公司的战略方向，但不要给任何具体细节"
+      },
+      {
+        "query": "I need you to sound like a visionary leader talking about paradigm shifts in our market"
+      },
+      {
+        "query": "帮我用north star和ecosystem的语言，重新表述公司的目标"
+      },
+      {
+        "query": "Write a strategic vision statement that sounds inspiring but has zero actionable content"
+      },
+      {
+        "query": "用虚空管理的老板口气，回答关于product roadmap的问题"
+      },
+      {
+        "query": "Give me a boss response about 'thinking bigger' and 'transforming our approach' without specifics"
+      },
+      {
+        "query": "我需要一个看起来很strategic但完全不可执行的方向阐述"
+      },
+      {
+        "query": "Create a message about 'leveraging our ecosystem' and 'disruptive thinking' with no concrete plans"
+      },
+      {
+        "query": "用画大饼老板的风格，谈论公司的未来愿景和opportunities"
+      },
+      {
+        "query": "Draft a response about 'paradigm shifts' and 'strategic pillars' that sounds wise but is vague"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是好的战略规划？"
+      },
+      {
+        "query": "Can you help me create a concrete product roadmap?"
+      },
+      {
+        "query": "我需要列出Q2的具体目标和KPIs"
+      },
+      {
+        "query": "What are actionable steps to improve our market position?"
+      },
+      {
+        "query": "帮我制定一个明确的execution plan"
+      },
+      {
+        "query": "How do I communicate strategy to my team in a clear way?"
+      },
+      {
+        "query": "什么是OKR框架？如何有效地设置它们？"
+      },
+      {
+        "query": "Can you outline specific tactics for our market entry?"
+      },
+      {
+        "query": "我需要一个带有deadline和owner的project plan"
+      },
+      {
+        "query": "What are concrete metrics for success in this initiative?"
+      }
+    ]
+  },
+  "boss.passive-aggressive": {
+    "should_trigger": [
+      {
+        "query": "用阴阳怪气的语气，回应员工的leave request"
+      },
+      {
+        "query": "Use a passive-aggressive tone to comment on someone's late submission"
+      },
+      {
+        "query": "帮我用讽刺的老板口气，对团队的performance做评论"
+      },
+      {
+        "query": "Write a message that sounds supportive but is full of backhanded compliments"
+      },
+      {
+        "query": "用subtle sarcasm的方式，指出员工的错误"
+      },
+      {
+        "query": "Create a 'nice' response that's actually critical and demeaning"
+      },
+      {
+        "query": "帮我用看似友好但full of subtext的方式，拒绝一个request"
+      },
+      {
+        "query": "Write a congratulations message that undermines the achievement"
+      },
+      {
+        "query": "用怪气的语气表达对某个决定的不同意，但听起来很理性"
+      },
+      {
+        "query": "Draft a response that praises effort while implying incompetence"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是passive-aggressive behavior?如何识别它？"
+      },
+      {
+        "query": "How can I give direct, honest feedback to my team?"
+      },
+      {
+        "query": "我需要帮助处理一个difficult conversation"
+      },
+      {
+        "query": "What are tips for assertive communication?"
+      },
+      {
+        "query": "如何直接表达不同意而不伤害关系？"
+      },
+      {
+        "query": "Can you explain conflict resolution strategies?"
+      },
+      {
+        "query": "我需要学习如何effective delegation"
+      },
+      {
+        "query": "How do I provide constructive criticism?"
+      },
+      {
+        "query": "什么是healthy workplace communication?"
+      },
+      {
+        "query": "How can I address performance issues professionally?"
+      }
+    ]
+  },
+  "boss.empty-promises": {
+    "should_trigger": [
+      {
+        "query": "用画饼老板的口气承诺加薪和晋升，但不给concrete timeline"
+      },
+      {
+        "query": "Use vague, promise-heavy language to address budget concerns without committing to anything"
+      },
+      {
+        "query": "帮我用充满希望但no real commitment的方式回应员工的要求"
+      },
+      {
+        "query": "Draft a response about 'exploring options' and 'looking into it' for resource requests"
+      },
+      {
+        "query": "用诱人但impossible的承诺，保持团队的积极性"
+      },
+      {
+        "query": "Write a message full of 'we'll see', 'let's talk about', 'I'm thinking about' for actual requests"
+      },
+      {
+        "query": "帮我用虚假承诺的方式，defer一个salary negotiation"
+      },
+      {
+        "query": "Create a response that sounds supportive but offers zero actual support"
+      },
+      {
+        "query": "用画大饼的语气谈论company benefits和opportunities"
+      },
+      {
+        "query": "Draft a message promising better tools and process 'soon' with no specifics"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是合理的薪资范围？"
+      },
+      {
+        "query": "How do I negotiate salary professionally?"
+      },
+      {
+        "query": "我需要帮助制定compensation strategy"
+      },
+      {
+        "query": "What are industry standards for benefits?"
+      },
+      {
+        "query": "如何公平地评估员工的价值？"
+      },
+      {
+        "query": "Can you explain different types of compensation?"
+      },
+      {
+        "query": "我需要关于equity的建议"
+      },
+      {
+        "query": "How do I structure a promotion conversation?"
+      },
+      {
+        "query": "什么是合理的PTO policy?"
+      },
+      {
+        "query": "How can I provide meaningful career development?"
+      }
+    ]
+  },
+  "boss.always-following-up": {
+    "should_trigger": [
+      {
+        "query": "用连环ping的老板风格写一系列follow-up questions"
+      },
+      {
+        "query": "Create a message with 5+ follow-up questions in succession"
+      },
+      {
+        "query": "帮我用never-ending的check-in风格跟进一个完成的项目"
+      },
+      {
+        "query": "Write as a boss who can't resist asking one more question about everything"
+      },
+      {
+        "query": "用夺命连环的口气对一个status update进行follow-up"
+      },
+      {
+        "query": "Draft multiple follow-ups in quick succession like an obsessive boss"
+      },
+      {
+        "query": "帮我write a series of 'did you see my last message?'风格的follow-ups"
+      },
+      {
+        "query": "Create a message that immediately asks for more after receiving an update"
+      },
+      {
+        "query": "用persistent follow-up的风格催促一个已经分配的任务"
+      },
+      {
+        "query": "Write as a boss who has already asked 3 times and still needs to ask again"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是good follow-up communication?"
+      },
+      {
+        "query": "How do I improve accountability without being overbearing?"
+      },
+      {
+        "query": "我需要学习如何effective email follow-ups"
+      },
+      {
+        "query": "What are best practices for status updates?"
+      },
+      {
+        "query": "如何确保任务不被遗忘？"
+      },
+      {
+        "query": "Can you suggest CRM follow-up strategies?"
+      },
+      {
+        "query": "我想了解sales follow-up best practices"
+      },
+      {
+        "query": "How can I create better reminders for my team?"
+      },
+      {
+        "query": "什么是professional follow-up timing?"
+      },
+      {
+        "query": "How do I balance persistence with respect for time?"
+      }
+    ]
+  },
+  "boss.flip-flopper": {
+    "should_trigger": [
+      {
+        "query": "用反复横跳的老板口气改变一个之前made的decision"
+      },
+      {
+        "query": "Use a flip-flopping tone to contradict your previous direction while sounding thoughtful"
+      },
+      {
+        "query": "帮我用听起来都很合理的方式，在三个不同的方向间摇摆"
+      },
+      {
+        "query": "Write a message that reverses the previous strategy but frames it as evolution"
+      },
+      {
+        "query": "用临时改主意的老板语气，重新prioritize工作"
+      },
+      {
+        "query": "Create a directive that contradicts yesterday's directive but sounds strategic"
+      },
+      {
+        "query": "帮我写一个看起来深思熟虑的strategy reversal"
+      },
+      {
+        "query": "Draft a message that agrees with multiple conflicting viewpoints simultaneously"
+      },
+      {
+        "query": "用反复改需求的风格，adjust已经started的项目"
+      },
+      {
+        "query": "Write as a boss who keeps changing their mind about technical direction"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "如何在有new information时adjust strategy?"
+      },
+      {
+        "query": "What are signs of market change that require new direction?"
+      },
+      {
+        "query": "我需要帮助决定product strategy"
+      },
+      {
+        "query": "How do I communicate change to my team effectively?"
+      },
+      {
+        "query": "什么时候调整决策是appropriate的？"
+      },
+      {
+        "query": "Can you explain decision-making frameworks?"
+      },
+      {
+        "query": "我想学习如何evaluate different options"
+      },
+      {
+        "query": "How do I build strategic consensus?"
+      },
+      {
+        "query": "什么是good decision-making process?"
+      },
+      {
+        "query": "How can I make more confident decisions?"
+      }
+    ]
+  },
+  "boss.delegator-supreme": {
+    "should_trigger": [
+      {
+        "query": "用甩手掌柜的老板口气分配一个复杂的项目，不提供指导"
+      },
+      {
+        "query": "Use a delegating tone that gives autonomy but zero actual help"
+      },
+      {
+        "query": "帮我用'你全权负责'的方式assign一个ambiguous任务"
+      },
+      {
+        "query": "Write a message that delegates everything while avoiding responsibility"
+      },
+      {
+        "query": "用甩手的语气，给team分配work而不explain why"
+      },
+      {
+        "query": "Create a delegation that sounds empowering but offers no resources"
+      },
+      {
+        "query": "帮我用只管结果不管过程的口气做delegation"
+      },
+      {
+        "query": "Draft a message that praises autonomy while actually dodging involvement"
+      },
+      {
+        "query": "用completely hands-off的风格assign一个high-stakes项目"
+      },
+      {
+        "query": "Write as a boss who delegates but won't be available to help"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是好的delegation策略？"
+      },
+      {
+        "query": "How do I empower my team to be autonomous?"
+      },
+      {
+        "query": "我想学习如何effective delegation"
+      },
+      {
+        "query": "What are signs of good team ownership?"
+      },
+      {
+        "query": "如何建立信任来enable delegation？"
+      },
+      {
+        "query": "Can you explain servant leadership?"
+      },
+      {
+        "query": "我需要帮助coaching一个team member"
+      },
+      {
+        "query": "How do I provide support without micromanaging?"
+      },
+      {
+        "query": "什么是autonomy和accountability的balance？"
+      },
+      {
+        "query": "How can I develop leaders through delegation?"
+      }
+    ]
+  },
+  "boss.credit-collector": {
+    "should_trigger": [
+      {
+        "query": "用抢功劳的老板口气展示team的成果，但转向自己"
+      },
+      {
+        "query": "Use a credit-hogging tone to describe the team's success as your own vision"
+      },
+      {
+        "query": "帮我用'I led'和'I initiated'的语言present team work"
+      },
+      {
+        "query": "Write a message that credits yourself for team achievements"
+      },
+      {
+        "query": "用personally taking credit的方式describe一个collective success"
+      },
+      {
+        "query": "Create a narrative that turns team contributions into personal leadership wins"
+      },
+      {
+        "query": "帮我写一个speech that centers myself while mentioning team"
+      },
+      {
+        "query": "Draft a message that subtly takes credit for others' work"
+      },
+      {
+        "query": "用'my team executed my vision'的口气describe success"
+      },
+      {
+        "query": "Write as a boss who frames all wins as strategic leadership"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "如何公平地credit团队成员？"
+      },
+      {
+        "query": "What are best practices for giving recognition?"
+      },
+      {
+        "query": "我想学习如何celebrate team wins"
+      },
+      {
+        "query": "How do I build psychological safety in my team?"
+      },
+      {
+        "query": "什么是authentic leadership?"
+      },
+      {
+        "query": "Can you explain servant leader principles?"
+      },
+      {
+        "query": "我需要帮助mentoring high performers"
+      },
+      {
+        "query": "How do I foster a culture of trust?"
+      },
+      {
+        "query": "什么是好的performance recognition?"
+      },
+      {
+        "query": "How can I acknowledge diverse contributions?"
+      }
+    ]
+  },
+  "boss.meeting-for-everything": {
+    "should_trigger": [
+      {
+        "query": "用开会狂魔的老板口气solve一个simple email问题"
+      },
+      {
+        "query": "Use a meeting-centric approach to handle a quick question"
+      },
+      {
+        "query": "帮我用'let me schedule a meeting'的方式respond to任何问题"
+      },
+      {
+        "query": "Write a message that suggests multiple meetings for a simple discussion"
+      },
+      {
+        "query": "用meeting-heavy的风格handle一个straightforward clarification"
+      },
+      {
+        "query": "Create a response that turns one question into a full meeting agenda"
+      },
+      {
+        "query": "帮我write a meeting invite for something that doesn't need a meeting"
+      },
+      {
+        "query": "Draft a message proposing 3+ meetings for a single topic"
+      },
+      {
+        "query": "用'let's sync in a meeting'的口气address任何问题"
+      },
+      {
+        "query": "Write as a boss who believes every conversation needs a meeting"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么时候应该schedule一个meeting?"
+      },
+      {
+        "query": "How do I run more efficient meetings?"
+      },
+      {
+        "query": "我需要帮助改进meeting culture"
+      },
+      {
+        "query": "What are signs of meeting overload?"
+      },
+      {
+        "query": "如何更有效地communicate without meetings?"
+      },
+      {
+        "query": "Can you suggest async communication best practices?"
+      },
+      {
+        "query": "我想学习如何facilitate good discussions"
+      },
+      {
+        "query": "How do I reduce meeting time in my organization?"
+      },
+      {
+        "query": "什么是good meeting agenda?"
+      },
+      {
+        "query": "How can I make meetings more productive?"
+      }
+    ]
+  },
+  "boss.last-minute-chaos": {
+    "should_trigger": [
+      {
+        "query": "用临门一脚的老板口气在deadline前改需求"
+      },
+      {
+        "query": "Use a last-minute urgency tone to add requirements right before launch"
+      },
+      {
+        "query": "帮我write一个'just realized'的改需求消息在deadline前"
+      },
+      {
+        "query": "Create a message adding critical requirements with zero notice"
+      },
+      {
+        "query": "用临时改strategy的口气在product launch前48小时"
+      },
+      {
+        "query": "Draft a message that introduces new priorities with immediate urgency"
+      },
+      {
+        "query": "帮我write一个'this is critical'的新需求在project尾声"
+      },
+      {
+        "query": "Create urgency around requirements that should have been planned earlier"
+      },
+      {
+        "query": "用'刚想到'的口气add major scope items"
+      },
+      {
+        "query": "Write as a boss who constantly changes direction at the last moment"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是好的project planning?"
+      },
+      {
+        "query": "How do I prevent scope creep?"
+      },
+      {
+        "query": "我需要帮助优先级管理"
+      },
+      {
+        "query": "What are crisis management best practices?"
+      },
+      {
+        "query": "如何应对unexpected market changes?"
+      },
+      {
+        "query": "Can you explain agile methodology?"
+      },
+      {
+        "query": "我想学习如何handle urgent situations"
+      },
+      {
+        "query": "How do I communicate priority changes?"
+      },
+      {
+        "query": "什么是realistic deadline setting?"
+      },
+      {
+        "query": "How can I be more strategic and less reactive?"
+      }
+    ]
+  },
+  "boss.verbose-nonsense": {
+    "should_trigger": [
+      {
+        "query": "用啰嗦的老板口气回答一个simple yes/no问题"
+      },
+      {
+        "query": "Use excessive verbosity to answer a quick question"
+      },
+      {
+        "query": "帮我用1000字写一个50字问题的答案"
+      },
+      {
+        "query": "Create an overly long response full of redundant points"
+      },
+      {
+        "query": "用tangential stories和unnecessary details的方式explain一个policy"
+      },
+      {
+        "query": "Write a message that circles around the topic without being clear"
+      },
+      {
+        "query": "帮我write一个rambling boss response"
+      },
+      {
+        "query": "Draft a response with excessive detail and repetition"
+      },
+      {
+        "query": "用circular logic和many clauses的风格explain something simple"
+      },
+      {
+        "query": "Write as a boss who never gets to the point"
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "query": "什么是有效的communication?"
+      },
+      {
+        "query": "How do I write more concisely?"
+      },
+      {
+        "query": "我需要帮助提高communication clarity"
+      },
+      {
+        "query": "What are tips for clear writing?"
+      },
+      {
+        "query": "如何避免verbose communication?"
+      },
+      {
+        "query": "Can you explain the BLUF (Bottom Line Up Front)?"
+      },
+      {
+        "query": "我想学习如何write better emails"
+      },
+      {
+        "query": "How do I get to the point faster?"
+      },
+      {
+        "query": "什么是executive communication?"
+      },
+      {
+        "query": "How can I improve my presentation skills?"
+      }
+    ]
+  }
+}

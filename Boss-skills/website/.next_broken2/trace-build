@@ -1,0 +1,6 @@
+[{"name":"next-build","duration":527941,"timestamp":52975501245,"id":1,"tags":{"buildMode":"default","version":"16.2.1","bundler":"turbopack","failed":true},"startTime":1774894043567,"traceId":"01916895c435897b"}]
+[{"name":"next-build","duration":399821,"timestamp":52984806223,"id":1,"tags":{"buildMode":"default","version":"16.2.1","bundler":"turbopack","failed":true},"startTime":1774894052872,"traceId":"600a56362c8430f0"}]
+[{"name":"next-build","duration":411836,"timestamp":53139493340,"id":1,"tags":{"buildMode":"default","version":"16.2.1","bundler":"turbopack","failed":true},"startTime":1774894207559,"traceId":"7211fc48957743f8"}]
+[{"name":"next-build","duration":389916,"timestamp":53144218430,"id":1,"tags":{"buildMode":"default","version":"16.2.1","bundler":"turbopack","failed":true},"startTime":1774894212284,"traceId":"3a3fb9348cba971e"}]
+[{"name":"next-build","duration":557387,"timestamp":53328913663,"id":1,"tags":{"buildMode":"default","version":"16.2.1","bundler":"turbopack","failed":true},"startTime":1774894396979,"traceId":"7bcc72f203c9eb85"}]
+[{"name":"next-build","duration":416206,"timestamp":53372971478,"id":1,"tags":{"buildMode":"default","version":"16.2.1","bundler":"turbopack","failed":true},"startTime":1774894441037,"traceId":"f49f6e7baf43fb84"}]

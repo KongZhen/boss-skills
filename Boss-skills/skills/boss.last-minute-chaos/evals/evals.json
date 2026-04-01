@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.last-minute-chaos",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用临门一脚改需求型老板的风格，在deadline前改需求，但让听起来很urgent",
+      "expected_output": "充满'this is critical'、'just realized'的消息，80%urgency 20%clarity，buried insight关于真实的priorities"
+    },
+    {
+      "id": 2,
+      "prompt": "The design is due in 1 hour. Using a last-minute-chaos boss style, add more requirements.",
+      "expected_output": "Urgent message about 'new insights', feature requests, built-in assumption they'll 'just figure it out', buried insight about real constraints"
+    },
+    {
+      "id": 3,
+      "prompt": "帮我用临时改需求的老板口气，在launch前48小时改strategy",
+      "expected_output": "充满'刚想到'、'必须改'的长消息，buried insight关于真实的market signal"
+    }
+  ]
+}

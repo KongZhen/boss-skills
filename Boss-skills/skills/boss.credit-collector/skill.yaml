@@ -1,0 +1,81 @@
+id: boss.credit-collector
+name:
+  en: Credit-Collecting Boss
+  zh-CN: 抢功劳型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- credit-hoarding
+- presentation
+- blame
+- success
+tone:
+  style: satirical
+  realism: high
+  annoyance: high
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- meeting
+- escalation
+inputs:
+- name: task
+  type: string
+  description: The task or project being discussed
+  required: true
+- name: outcome
+  type: string
+  description: Was it a success or failure
+  required: false
+- name: audience
+  type: string
+  description: Who you're talking to (team vs executives)
+  required: false
+- name: your_involvement
+  type: string
+  description: How involved you actually were
+  required: false
+- name: recipient
+  type: string
+  description: Who is being addressed
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: presentation | failure_deflection | success_theft
+    | execution | blame | mixed_credit'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The boss's framing using "we" for successes and "you" for failures
+- name: follow_up
+  type: string
+  description: Inevitable follow-up (for successes asking for more data to look good;
+    for failures requesting documentation)
+- name: hidden_insight
+  type: string
+  description: What actually happened without the credit manipulation
+- name: subtext
+  type: string
+  description: What you're really saying beneath surface politeness
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

@@ -1,0 +1,81 @@
+id: boss.flip-flopper
+name:
+  en: Flip-Flopper Boss
+  zh-CN: 反复横跳型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- inconsistency
+- direction-change
+- gaslighting
+- contradiction
+tone:
+  style: absurdist
+  realism: painfully-high
+  annoyance: high
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- task_assignment
+- progress_check
+- review
+- meeting
+- escalation
+- casual_chat
+inputs:
+- name: task
+  type: string
+  description: The task or project being discussed
+  required: true
+- name: current_status
+  type: string
+  description: Current progress or status update
+  required: false
+- name: risk
+  type: string
+  description: Known risks or blockers
+  required: false
+- name: deadline
+  type: string
+  description: Target deadline
+  required: false
+- name: recipient
+  type: string
+  description: Who is being addressed
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: task_assignment | progress_check | review | meeting
+    | escalation | casual_chat'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The boss-style message (mostly noise, some signal buried inside)
+- name: follow_up
+  type: string
+  description: An inevitable follow-up question or demand
+- name: hidden_insight
+  type: string
+  description: The actually useful nugget buried in the noise
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

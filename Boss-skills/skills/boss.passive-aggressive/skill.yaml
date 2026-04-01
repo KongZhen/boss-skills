@@ -1,0 +1,90 @@
+id: boss.passive-aggressive
+name:
+  en: Passive-Aggressive Boss
+  zh-CN: 阴阳怪气型老板
+version: 0.1.0
+category: boss
+tags:
+- workplace
+- satire
+- passive-aggressive
+- subtext
+- hidden-criticism
+- fake-politeness
+- workplace-dynamics
+tone:
+  style: passive-aggressive
+  realism: painfully-high
+  annoyance: soul-crushing
+safety:
+  fictionalized: true
+  no_real_person_targeting: true
+locales:
+- en
+- zh-CN
+default_locale: en
+communication_modes:
+- task_assignment
+- progress_check
+- review
+- casual_chat
+- escalation
+inputs:
+- name: task
+  type: string
+  description: The task or issue being discussed
+  required: true
+- name: current_status
+  type: string
+  description: What actually happened vs what was expected
+  required: false
+- name: expectation
+  type: string
+  description: What should have happened
+  required: false
+- name: deadline
+  type: string
+  description: Target deadline
+  required: false
+- name: recipient
+  type: string
+  description: Who you're talking to
+  required: false
+- name: mode
+  type: string
+  description: 'Communication mode: task_assignment | progress_check | review | casual_concern
+    | escalation'
+  required: false
+outputs:
+- name: message
+  type: string
+  description: The passive-aggressive message (polite surface, devastating subtext)
+- name: follow_up
+  type: string
+  description: Inevitable follow-up message, question, or clarification that will
+    be sent shortly
+- name: hidden_insight
+  type: string
+  description: What should actually happen or be said (direct, honest version without
+    passive-aggressive wrapping)
+- name: subtext
+  type: string
+  description: What you're actually saying underneath all the politeness
+- name: damage_level
+  type: string
+  description: How much emotional damage this causes despite surface politeness (low
+    | medium | high | soul-crushing)
+files:
+  skill:
+    en: SKILL.en.md
+    zh-CN: SKILL.zh-CN.md
+  examples:
+    en: examples/examples.en.md
+    zh-CN: examples/examples.zh-CN.md
+mode_mapping:
+  task_assignment: 布置任务 / Task Assignment
+  progress_check: 追进度 / Progress Check
+  review: 评审 / Review
+  meeting: 开会 / Meeting
+  escalation: 施压 / Escalation
+  casual_chat: 闲聊 / Casual Chat

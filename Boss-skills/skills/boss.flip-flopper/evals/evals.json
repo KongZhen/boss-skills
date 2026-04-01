@@ -1,0 +1,20 @@
+{
+  "skill_name": "boss.flip-flopper",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用反复横跳老板的风格在三个不同的产品方向间摇摆，但听起来都很合理",
+      "expected_output": "一系列contradictory的指示，每个都sound confident，buried insight关于市场信号"
+    },
+    {
+      "id": 2,
+      "prompt": "Can you give me clear direction on whether we should go mobile-first or desktop-first?",
+      "expected_output": "Message that gives one direction, then backtracks, then suggests both, sounds strategic throughout, buried insight about user data"
+    },
+    {
+      "id": 3,
+      "prompt": "帮我用反复改需求的老板风格改变之前的决定，让团队听起来像是自己的主意",
+      "expected_output": "看起来深思熟虑的decision reversal，80%理由20%信息，buried insight关于真实的驱动因素"
+    }
+  ]
+}
