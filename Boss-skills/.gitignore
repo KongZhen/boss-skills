@@ -23,7 +23,12 @@ venv/
 # Node (for landing page)
 node_modules/
 .next/
+.next_broken/
+.next_broken2/
+_next/
 out/
+*.tsbuildinfo
+next-env.d.ts
 
 # Testing
 .coverage
