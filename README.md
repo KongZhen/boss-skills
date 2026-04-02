@@ -8,6 +8,15 @@ Useful? Slightly. Accurate? Uncomfortably. Engineered seriously? Absolutely.
 
 English | [简体中文](./README.zh-CN.md)
 
+<p align="center">
+  <img src="docs/images/screenshot-home-en.png" alt="Boss Skills Homepage (English)" width="700" />
+</p>
+<p align="center">
+  <img src="docs/images/screenshot-home-zh.png" alt="Boss Skills Homepage (中文)" width="700" />
+</p>
+
+> **Live site: [boss-skills.com](https://boss-skills.com)**
+
 ---
 
 ## What is this?
@@ -142,8 +151,8 @@ Read more in [`docs/philosophy.md`](docs/philosophy.md).
 
 - [x] Skill schema + validation
 - [x] `boss.micromanager` (benchmark skill)
-- [ ] Remaining 11 boss skills
-- [ ] Landing page
+- [x] All 12 boss skills (EN + ZH-CN)
+- [x] Landing page ([boss-skills.com](https://boss-skills.com))
 - [ ] Skill catalog generator
 - [ ] Additional locales (ja, es, de, fr)
 - [ ] Agent wrapper demo (`boss-agent --persona boss.micromanager`)
