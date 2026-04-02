@@ -1,0 +1,18 @@
+{
+  "name": "boss-skills",
+  "version": "0.1.0",
+  "description": "Install boss skill personas into your AI tool. A serious framework for unserious bosses.",
+  "bin": {
+    "boss-skills": "./bin/boss-skills.mjs"
+  },
+  "type": "module",
+  "keywords": ["ai", "skills", "claude", "cursor", "boss", "persona", "satire"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KongZhen/boss-skills"
+  },
+  "homepage": "https://boss-skills.com",
+  "license": "MIT",
+  "author": "KongZhen",
+  "files": ["bin/", "README.md"]
+}

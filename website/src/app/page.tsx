@@ -1226,8 +1226,8 @@ function HeroSection() {
             <a href="#playground" className={`btn-pixel btn-pixel-gold${zh ? ' btn-pixel-zh' : ''}`}>
               ▶ {zh ? '体验一下' : 'Try Playground'}
             </a>
-            <a href="#skills" className={`btn-pixel btn-pixel-outline${zh ? ' btn-pixel-zh' : ''}`}>
-              {zh ? '选老板' : 'Browse Skills'}
+            <a href="#get-started" className={`btn-pixel btn-pixel-outline${zh ? ' btn-pixel-zh' : ''}`}>
+              {zh ? '一键部署' : 'Get Started'}
             </a>
             <a
               href="https://github.com/KongZhen/boss-skills"
@@ -1640,6 +1640,352 @@ npm install @anthropic-ai/sdk`}
             </div>
           );
         })()}
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   GET STARTED SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+
+function GetStartedSection() {
+  const { locale } = useLocale();
+  const zh = locale === 'zh';
+  const [copied, setCopied] = useState(false);
+  const [expandOther, setExpandOther] = useState(false);
+
+  const command = 'npx boss-skills install boss.micromanager';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(command);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <section id="get-started">
+      <div className="section-divider" />
+      <div className="page-section">
+        <h2 className={`section-title${zh ? ' section-title-zh' : ''}`}>
+          {zh ? '一键部署' : 'Get Started'}
+        </h2>
+        <p className={`section-subtitle${zh ? ' section-subtitle-zh' : ''}`}>
+          {zh ? '两步搞定，支持所有主流AI工具' : 'Two steps. Any AI tool.'}
+        </p>
+
+        <style>{`
+          .get-started-steps {
+            display: grid;
+            gap: 40px;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .get-started-step {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+          }
+
+          .step-number {
+            font-family: 'Jersey 20', monospace;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            line-height: 1;
+          }
+
+          .step-title {
+            font-family: 'Jersey 10', monospace;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+          }
+
+          .step-title-zh {
+            font-family: var(--font-pixel-cjk), sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 1rem;
+          }
+
+          .command-block {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 4px 4px 0 0 var(--text-primary);
+          }
+
+          .command-code {
+            flex: 1;
+            font-family: 'Fira Code', 'SF Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            padding: 16px 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            background: #1a1a2e;
+            color: #e0e0e0;
+          }
+
+          .command-copy-btn {
+            font-family: 'Jersey 10', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 16px 20px;
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: all 100ms;
+          }
+
+          .command-copy-btn:hover {
+            opacity: 0.85;
+          }
+
+          .command-copy-btn.copied {
+            background: #4caf50;
+          }
+
+          .supported-tools {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            line-height: 1.6;
+          }
+
+          .other-methods {
+            margin-top: 16px;
+            border: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+          }
+
+          .other-methods-header {
+            padding: 16px 20px;
+            font-family: 'Jersey 10', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border-bottom: 2px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 100ms;
+          }
+
+          .other-methods-header:hover {
+            background: var(--bg-secondary);
+          }
+
+          .expand-indicator {
+            font-size: 1rem;
+            transition: transform 200ms;
+          }
+
+          .expand-indicator.open {
+            transform: rotate(180deg);
+          }
+
+          .other-methods-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 200ms ease-out;
+          }
+
+          .other-methods-list.open {
+            max-height: 600px;
+            padding: 16px 20px;
+          }
+
+          .method-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+          }
+
+          .method-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+
+          .method-label {
+            font-family: 'Jersey 10', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+          }
+
+          .method-code {
+            font-family: 'Fira Code', 'SF Mono', monospace;
+            font-size: 0.8rem;
+            color: #e0e0e0;
+            background: #1a1a2e;
+            padding: 12px 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+          }
+
+          .step-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+          }
+
+          .step-description-zh {
+            font-family: var(--font-pixel-cjk), sans-serif;
+          }
+
+          .step-link {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 2px solid var(--text-primary);
+            background: transparent;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Jersey 10', monospace;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 100ms;
+            margin-top: 12px;
+          }
+
+          .step-link:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+          }
+
+          .step-link-zh {
+            font-family: var(--font-pixel-cjk), sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+          }
+
+          .update-note {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-gold);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+          }
+
+          .update-note-zh {
+            font-family: var(--font-pixel-cjk), sans-serif;
+          }
+
+          @media (max-width: 600px) {
+            .command-block {
+              flex-direction: column;
+            }
+
+            .command-code {
+              font-size: 0.8rem;
+            }
+
+            .command-copy-btn {
+              width: 100%;
+            }
+
+            .get-started-steps {
+              gap: 32px;
+            }
+          }
+        `}</style>
+
+        <div className="get-started-steps">
+          {/* Step 1: Install */}
+          <div className="get-started-step">
+            <div className="step-number">1</div>
+            <h3 className={`step-title${zh ? ' step-title-zh' : ''}`}>
+              {zh ? '安装' : 'Install'}
+            </h3>
+
+            <div className="command-block">
+              <div className="command-code">{command}</div>
+              <button className="command-copy-btn" onClick={handleCopy}>
+                {copied ? '✓' : 'COPY'}
+              </button>
+            </div>
+
+            <div className="supported-tools">
+              {zh
+                ? '支持: Claude Code · Cursor · Gemini CLI · Codex CLI'
+                : 'Works with: Claude Code · Cursor · Gemini CLI · Codex CLI'}
+            </div>
+
+            {/* Expandable other methods */}
+            <div className="other-methods">
+              <div
+                className="other-methods-header"
+                onClick={() => setExpandOther(!expandOther)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && setExpandOther(!expandOther)}
+              >
+                <span>{zh ? '其他安装方式' : 'Other install methods'}</span>
+                <span className={`expand-indicator${expandOther ? ' open' : ''}`}>▼</span>
+              </div>
+              <div className={`other-methods-list${expandOther ? ' open' : ''}`}>
+                <div className="method-item">
+                  <div className="method-label">Claude Code Plugin</div>
+                  <div className="method-code">claude plugin add boss-skills</div>
+                </div>
+                <div className="method-item">
+                  <div className="method-label">{zh ? '手动安装' : 'Manual Install'}</div>
+                  <div className="method-code">cp -r skills/boss.micromanager /path/to/.claude/skills/</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 2: Choose */}
+          <div className="get-started-step">
+            <div className="step-number">2</div>
+            <h3 className={`step-title${zh ? ' step-title-zh' : ''}`}>
+              {zh ? '选择你的老板' : 'Choose your boss'}
+            </h3>
+            <p className={`step-description${zh ? ' step-description-zh' : ''}`}>
+              {zh
+                ? '我们有12个不同类型的老板角色。找到最适合你的那个，或者全部安装。'
+                : "We have 12 different boss personas. Find the one that fits your needs, or install them all."}
+            </p>
+            <a href="#skills" className={`step-link${zh ? ' step-link-zh' : ''}`}>
+              → {zh ? '浏览技能库' : 'Browse Skills'}
+            </a>
+          </div>
+        </div>
+
+        {/* Update note */}
+        <div className={`update-note${zh ? ' update-note-zh' : ''}`}>
+          {zh
+            ? '💡 提示: 运行 npx boss-skills update 来保持最新版本'
+            : '💡 Tip: Run npx boss-skills update to stay current'}
+        </div>
       </div>
     </section>
   );
@@ -2227,6 +2573,7 @@ export default function HomePage() {
       <style>{PAGE_STYLES}</style>
       <HeroSection />
       <SkillsSection />
+      <GetStartedSection />
       <PlaygroundSection />
       <AboutSection />
       <ContributeSection />

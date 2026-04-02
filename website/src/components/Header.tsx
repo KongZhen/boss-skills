@@ -6,16 +6,18 @@ import { useTheme, useLocale } from '@/contexts/AppContext';
 
 const NAV_ITEMS = {
   en: [
-    { label: 'Skills',     href: '/#skills' },
-    { label: 'Playground', href: '/#playground' },
-    { label: 'About',      href: '/#about' },
-    { label: 'Contribute', href: '/#contribute' },
+    { label: 'Get Started', href: '/#get-started' },
+    { label: 'Skills',      href: '/#skills' },
+    { label: 'Playground',  href: '/#playground' },
+    { label: 'About',       href: '/#about' },
+    { label: 'Contribute',  href: '/#contribute' },
   ],
   zh: [
-    { label: '技能库', href: '/#skills' },
-    { label: '模拟器', href: '/#playground' },
-    { label: '关于',   href: '/#about' },
-    { label: '来一个', href: '/#contribute' },
+    { label: '一键部署', href: '/#get-started' },
+    { label: '技能库',   href: '/#skills' },
+    { label: '模拟器',   href: '/#playground' },
+    { label: '关于',     href: '/#about' },
+    { label: '来一个',   href: '/#contribute' },
   ],
 };
 
