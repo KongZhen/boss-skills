@@ -1,6 +1,5 @@
+import BossDetailContent from '@/components/BossDetailContent';
 import Link from 'next/link';
-import 'nes.css/css/nes.css';
-import PixelButton from '@/components/PixelButton';
 
 interface BossDetail {
   slug: string;
@@ -15,11 +14,15 @@ interface BossDetail {
   typicalLines: string[];
   communicationModes: Array<{
     mode: string;
+    modeCn?: string;
     description: string;
+    descriptionCn?: string;
   }>;
   example: {
     input: string;
+    inputCn?: string;
     output: string;
+    outputCn?: string;
   };
 }
 
@@ -65,29 +68,42 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     communicationModes: [
       {
         mode: 'Task Assignment',
+        modeCn: '任务分配',
         description: 'Comes with 8 attachments, 3 follow-up meetings, and a mandatory daily standup',
+        descriptionCn: '附带8个附件、3次后续会议和一个强制性的每日站会',
       },
       {
         mode: 'Progress Check',
+        modeCn: '进度检查',
         description: 'Expects spreadsheet, verbal explanation, written summary, and live screen share',
+        descriptionCn: '期望电子表格、口头解释、书面总结和实时屏幕共享',
       },
       {
         mode: 'Review',
+        modeCn: '审查',
         description: 'Line-by-line feedback with requests for revisions on previously approved sections',
+        descriptionCn: '逐行反馈，并要求修改之前已批准的部分',
       },
       {
         mode: 'Meeting',
+        modeCn: '会议',
         description: 'A 30-minute meeting about a 2-minute topic with 47 rabbit holes',
+        descriptionCn: '为一个2分钟话题开的30分钟会议，带47个跑题讨论',
       },
       {
         mode: 'Escalation',
+        modeCn: '升级',
         description: 'Hourly check-ins, daily standups, and a "war room" with all stakeholders',
+        descriptionCn: '每小时签到、每日站会，以及一个包含所有利益相关者的"作战室"',
       },
     ],
     example: {
       input: 'Task: Build new dashboard. Progress: Started architecture. Deadline: 2 weeks.',
+      inputCn: '任务：构建新仪表板。进度：开始架构设计。截止日期：2周。',
       output:
         'I appreciate the update. A few things: (1) Can you break down the architecture into subtasks? (2) When you say "started," do you have a percentage? (3) I\'d like a daily sync at 9 AM to review your decisions. (4) Can you send me a shared Google Doc of your approach before you start coding? (5) I\'ll probably pop into your calendar for a few 15-minute check-ins. (6) Let\'s define what "complete" means for each subtask. (7) Can you CC me on all architecture decisions? (8) I\'ve set up a spreadsheet to track your hourly progress. (9) Let\'s sync again in 30 minutes to ensure we\'re aligned on the definition of "alignment." Okay?',
+      outputCn:
+        '感谢更新。几件事：(1) 能把架构拆分成子任务吗？(2) 你说"开始了"，有百分比吗？(3) 我想每天早上9点同步一下你的决策。(4) 开始编码前能发给我一个共享的Google Doc吗？(5) 我可能会在你的日历上安排几次15分钟的签到。(6) 让我们定义每个子任务的"完成"标准。(7) 所有架构决策都抄送我。(8) 我已经建了一个电子表格来追踪你的每小时进度。(9) 30分钟后我们再同步一下，确保我们对"对齐"的定义保持一致。好吗？',
     },
   },
   'passive-aggressive': {
@@ -131,29 +147,42 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     communicationModes: [
       {
         mode: 'Task Assignment',
+        modeCn: '任务分配',
         description: 'Wraps assignments in doubt: "I\'m sure you can handle this... I hope."',
+        descriptionCn: '用怀疑包装任务分配："我相信你能搞定……我希望如此。"',
       },
       {
         mode: 'Progress Check',
+        modeCn: '进度检查',
         description: 'Asks loaded questions: "Is everything going as planned?" (Spoiler: it\'s not)',
+        descriptionCn: '问诱导性问题："一切都按计划进行吗？"（剧透：并没有）',
       },
       {
         mode: 'Review',
+        modeCn: '审查',
         description: 'Says it\'s "good" while listing 19 things to change',
+        descriptionCn: '说"挺好的"，同时列出19项需要修改的内容',
       },
       {
         mode: 'Meeting',
+        modeCn: '会议',
         description: 'Spends 45 minutes asking "why" for decisions already approved',
+        descriptionCn: '花45分钟质问已经批准的决定"为什么"',
       },
       {
         mode: 'Escalation',
+        modeCn: '升级',
         description: 'Formally documents all previous passive-aggressive comments with "concern"',
+        descriptionCn: '正式记录所有之前的阴阳怪气评论，标注为"关切"',
       },
     ],
     example: {
       input: 'Proposed new testing framework.',
+      inputCn: '提议使用新的测试框架。',
       output:
         'Oh, interesting choice. I appreciate the effort you put into this. I\'m sure it\'s... comprehensive. A few thoughts: (1) It\'s definitely different from what we usually do. (2) I didn\'t expect you to go this direction, but I\'m curious. (3) I hope the learning curve isn\'t too steep for the team. (4) It\'s bold, I\'ll give you that. (5) Have you considered what happens when something breaks? Just wondering. Anyway, let\'s schedule a meeting to discuss further.',
+      outputCn:
+        '哦，有趣的选择。我很感激你在这上面花的心思。我相信它……很全面。几点想法：(1) 这肯定跟我们平常做的不一样。(2) 没想到你会选这个方向，但我很好奇。(3) 希望团队的学习曲线不会太陡。(4) 够大胆的，这一点我承认。(5) 你有没有想过万一出问题了怎么办？只是随便问问。总之，我们安排个会讨论一下吧。',
     },
   },
   'empty-promises': {
@@ -163,9 +192,9 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     taglineEn: 'Tomorrow, next quarter, after the restructure...',
     taglineCn: '明天，下个季度，重组之后...',
     descriptionEn:
-      'The Empty Promises Boss speaks in visions, not plans. Every conversation starts with "What if we could..." and ends with "We\'ll circle back to that." They promise promotions, time off, resources, flexibility—all scheduled for a mythical future that never arrives. The present is always too chaotic for delivery.',
+      'The Empty Promises Boss speaks in visions, not plans. Every conversation starts with "What if we could..." and ends with "We\'ll circle back to that." They promise promotions, time off, resources, flexibility—all scheduled for a mythical future that never arrives.',
     descriptionCn:
-      '空洞承诺老板用愿景而非计划说话。每次对话都以"如果我们能..."开始，以"我们稍后再讨论"结束。他们承诺晋升、休假、资源、灵活性——所有这些都定在一个永不到来的神话般的未来。现在总是太混乱，无法交付。',
+      '空洞承诺老板用愿景而非计划说话。每次对话都以"如果我们能..."开始，以"我们稍后再讨论"结束。他们承诺晋升、休假、资源、灵活性——所有这些都定在一个永不到来的神话般的未来。',
     behaviors: [
       'Promises things they have no authority to give',
       'Uses "we\'ll definitely do X in the next cycle" as a permanent stall tactic',
@@ -197,29 +226,42 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     communicationModes: [
       {
         mode: 'Task Assignment',
+        modeCn: '任务分配',
         description: 'Frames it as temporary: "Just this quarter while we stabilize."',
+        descriptionCn: '包装成临时性的："只是这个季度，等我们稳定下来就好了。"',
       },
       {
         mode: 'Progress Check',
+        modeCn: '进度检查',
         description: 'Acknowledges delays but pivots to future opportunities',
+        descriptionCn: '承认延迟，但话题转向未来机会',
       },
       {
         mode: 'Review',
+        modeCn: '审查',
         description: 'Postpones feedback: "Let\'s discuss this when we have more time."',
+        descriptionCn: '推迟反馈："等我们有更多时间再讨论。"',
       },
       {
         mode: 'Meeting',
+        modeCn: '会议',
         description: 'Talks about what\'s coming next, not what\'s happening now',
+        descriptionCn: '谈论下一步计划，而不是当前情况',
       },
       {
         mode: 'Escalation',
+        modeCn: '升级',
         description: 'Promises immediate attention, then becomes unavailable',
+        descriptionCn: '承诺立刻关注，然后失联',
       },
     ],
     example: {
       input: 'Asking about promised promotion timeline.',
+      inputCn: '询问承诺的晋升时间表。',
       output:
         'Oh, right, yeah. So about that... things have been pretty chaotic in leadership, you know? But I\'m definitely thinking about it. In fact, I think once we get through this next restructure—probably in Q3—we can talk seriously about bumping you up. You\'d be a great fit for a senior role. Maybe even a lead. I just need to see how the org shapes up. But I\'m rooting for you! Let\'s touch base in like 6 months and reassess. Sound good?',
+      outputCn:
+        '哦对对，关于这件事……你知道管理层最近挺混乱的。但我绝对在考虑这件事。事实上，我觉得等这次重组完——大概Q3吧——我们就可以认真讨论给你升职了。你非常适合高级职位。甚至可能是负责人。我只需要看看组织架构怎么调整。但我支持你！我们大概6个月后再碰头评估一下。行吗？',
     },
   },
   'flip-flopper': {
@@ -229,9 +271,9 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     taglineEn: 'Changed mind 5 times before your coffee cooled.',
     taglineCn: '在你咖啡冷掉前已经改变五次想法。',
     descriptionEn:
-      'The Flip-Flopper operates in a state of perpetual indecision. They change direction with the wind—or more accurately, with whoever they just talked to. Decisions aren\'t made; they\'re temporarily agreed upon. Working with them means constant context-switching and the knowledge that everything could pivot at a moment\'s notice.',
+      'The Flip-Flopper operates in a state of perpetual indecision. They change direction with the wind—or more accurately, with whoever they just talked to. Decisions aren\'t made; they\'re temporarily agreed upon.',
     descriptionCn:
-      '反复横跳者处于永久的优柔寡断状态。他们随风改变方向——更准确地说，和他们刚刚交谈的任何人。决定不是被做出的，而是被临时同意的。与他们一起工作意味着不断的上下文切换和一切都可能随时改变的知识。',
+      '反复横跳者处于永久的优柔寡断状态。他们随风改变方向——更准确地说，和他们刚刚交谈的任何人。决定不是被做出的，而是被临时同意的。',
     behaviors: [
       'Changes decision 3-5 times per week',
       'Says "Actually, I was thinking..." to reverse previous calls',
@@ -263,41 +305,54 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     communicationModes: [
       {
         mode: 'Task Assignment',
+        modeCn: '任务分配',
         description: 'Will be revised at least twice before you finish the first part',
+        descriptionCn: '在你完成第一部分之前至少会修改两次',
       },
       {
         mode: 'Progress Check',
+        modeCn: '进度检查',
         description: 'Realizes they meant something completely different',
+        descriptionCn: '意识到他们原本想的是完全不同的东西',
       },
       {
         mode: 'Review',
+        modeCn: '审查',
         description: 'Says "Can we try a different approach?" after 80% completion',
+        descriptionCn: '完成80%后说"我们能换个方法吗？"',
       },
       {
         mode: 'Meeting',
+        modeCn: '会议',
         description: 'Leaves with a new direction that contradicts the previous meeting',
+        descriptionCn: '会议结束后的新方向与上次会议完全矛盾',
       },
       {
         mode: 'Escalation',
+        modeCn: '升级',
         description: 'Calls emergency pivot meeting, reverses previous emergency pivot',
+        descriptionCn: '召开紧急转向会议，推翻上次紧急转向的决定',
       },
     ],
     example: {
       input: 'Building feature A per requirements from last week.',
+      inputCn: '按照上周的需求构建功能A。',
       output:
         'Wait, we\'re still doing feature A? I was just thinking—what if we focused on feature B instead? It\'s actually more strategic. Yeah, I know we spent weeks planning feature A, but hear me out: feature B could be bigger. Let\'s pivot. Actually, wait—did I tell you to do feature A or feature B? I need you to stop what you\'re doing and we can realign. Or maybe we do both? Let me talk to the product team and get back to you. But yes, full speed ahead on A. Or B. I\'ll clarify by EOD.',
+      outputCn:
+        '等等，我们还在做功能A？我刚在想——如果我们改做功能B呢？其实更有战略意义。是，我知道我们花了几周规划功能A，但你听我说：功能B可能更大。我们转向吧。等等——我让你做的是A还是B？你先停下手头的工作，我们重新对齐。或者两个都做？我去找产品团队聊聊再回复你。但是，A全速推进。或者B。今天下班前我会确认的。',
     },
   },
-  'always-calling': {
-    slug: 'always-calling',
+  'always-following-up': {
+    slug: 'always-following-up',
     nameEn: 'Always Following Up',
     nameCn: '夺命连环call型',
     taglineEn: 'Called twice. Texted three times. Emailed once. It\'s been 4 minutes.',
     taglineCn: '打了两遍电话。发了三条消息。发了一封邮件。才过了4分钟。',
     descriptionEn:
-      'The Always-Calling Boss cannot wait. They interpret silence as insubordination. They call once, then immediately call again. They message, ping, email, and call in rapid succession. They believe "urgent" means "this very second." Absence of response is treated as crisis.',
+      'The Always-Calling Boss cannot wait. They interpret silence as insubordination. They call once, then immediately call again. They message, ping, email, and call in rapid succession. They believe "urgent" means "this very second."',
     descriptionCn:
-      '总是打电话的老板无法等待。他们将沉默解释为不服从。他们打一次电话，然后立即再打一次。他们快速连续地发送信息、ping、电子邮件和电话。他们相信"紧急"意味着"这一秒钟"。缺乏回应被视为危机。',
+      '总是打电话的老板无法等待。他们将沉默解释为不服从。他们打一次电话，然后立即再打一次。他们快速连续地发送信息、ping、电子邮件和电话。他们相信"紧急"意味着"这一秒钟"。',
     behaviors: [
       'Calls 5 times if you don\'t answer the first call',
       'Sends follow-up messages 30 seconds after the first',
@@ -329,29 +384,42 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
     communicationModes: [
       {
         mode: 'Task Assignment',
+        modeCn: '任务分配',
         description: 'Followed by 4 immediate follow-ups ensuring you understood',
+        descriptionCn: '之后立刻跟4条消息确保你理解了',
       },
       {
         mode: 'Progress Check',
+        modeCn: '进度检查',
         description: 'Multiple contact methods used simultaneously',
+        descriptionCn: '同时使用多种联系方式',
       },
       {
         mode: 'Review',
+        modeCn: '审查',
         description: 'Needs to discuss immediately, won\'t wait for email response',
+        descriptionCn: '需要立刻讨论，不等邮件回复',
       },
       {
         mode: 'Meeting',
+        modeCn: '会议',
         description: 'Scheduled as "urgent" even if it\'s routine',
+        descriptionCn: '即使是常规事项也标记为"紧急"',
       },
       {
         mode: 'Escalation',
+        modeCn: '升级',
         description: 'Rapid-fire calls, emails, and Slacks until you respond',
+        descriptionCn: '电话、邮件、Slack连番轰炸直到你回应',
       },
     ],
     example: {
       input: 'Status update on project.',
+      inputCn: '项目状态更新。',
       output:
         '[3 Slack messages in 2 minutes] [2 missed calls] [Email with subject "URGENT: Need update"] Hey, where are you? Call me back. I need to know where we stand on the project. It\'s important. Actually, let\'s just hop on a call. I\'m calling you now. Pick up.',
+      outputCn:
+        '[2分钟内3条Slack消息] [2个未接电话] [主题为"紧急：需要更新"的邮件] 嘿，你在哪？回我电话。我需要知道项目进展。很重要。算了，我们直接通话吧。我现在打给你。接电话。',
     },
   },
 };
@@ -359,11 +427,11 @@ const BOSS_DETAILS: Record<string, BossDetail> = {
 const ABBREVIATED_BOSSES = [
   'credit-collector',
   'delegator-supreme',
-  'meeting-addict',
-  'deadline-killer',
-  'black-tongue',
-  'verbose-master',
-  'big-picture-vague',
+  'meeting-for-everything',
+  'last-minute-chaos',
+  'need-translation',
+  'verbose-nonsense',
+  'visionary-but-vague',
 ];
 
 export function generateStaticParams() {
@@ -380,450 +448,35 @@ interface PageProps {
 
 export default async function BossDetailPage({ params }: PageProps) {
   const { slug } = await params;
-
   const boss = BOSS_DETAILS[slug];
 
   if (!boss && !ABBREVIATED_BOSSES.includes(slug)) {
     return (
-      <div className="bg-marine text-frost min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: 'monospace' }}>
+      <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontFamily: 'var(--font-pixel)', fontSize: '1.5rem', letterSpacing: '2px', color: 'var(--text-primary)', marginBottom: '16px' }}>
             BOSS NOT FOUND
           </h1>
-          <p className="text-slate mb-6">This boss hasn't been documented yet.</p>
-          <Link href="/skills" className="nes-btn is-primary">
-            Back to Skills
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  // For abbreviated bosses (coming soon)
-  if (!boss) {
-    const abbrevBoss = {
-      slug,
-      nameEn: slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-      nameCn: 'Coming Soon',
-      taglineEn: 'Documentation in progress...',
-      taglineCn: '文档正在进行中...',
-      descriptionEn: 'This boss profile is still being documented. Check back soon for the full dossier!',
-      descriptionCn: '该老板档案仍在记录中。请稍后查看完整的档案！',
-      behaviors: ['Coming soon...'],
-      behaviorsCn: ['即将推出...'],
-      typicalLines: ['[This boss is still being researched...]'],
-      communicationModes: [
-        { mode: 'All modes', description: 'Documentation coming soon' },
-      ],
-      example: {
-        input: 'Coming soon...',
-        output: 'Full examples will be available soon!',
-      },
-    };
-
-    return (
-      <div className="bg-marine text-frost min-h-screen">
-        <style>{`
-          .detail-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-          }
-
-          .hero-section {
-            text-align: center;
-            margin-bottom: 48px;
-            padding: 32px;
-            border: 4px solid #89aec8;
-            background: rgba(137, 174, 200, 0.05);
-          }
-
-          .hero-title {
-            font-size: 3rem;
-            font-family: monospace;
-            font-weight: bold;
-            color: #f0f6f7;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-          }
-
-          .hero-tagline {
-            font-size: 1.125rem;
-            color: #89aec8;
-            font-family: monospace;
-            font-style: italic;
-          }
-
-          .coming-soon {
-            text-align: center;
-            padding: 48px 24px;
-            border: 3px dashed #f0a000;
-            background: rgba(240, 160, 0, 0.05);
-            color: #f0f6f7;
-            font-family: monospace;
-          }
-
-          .coming-soon-text {
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-            letter-spacing: 2px;
-          }
-
-          .cta-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 32px;
-          }
-
-          @media (max-width: 640px) {
-            .detail-container {
-              padding: 40px 16px;
-            }
-
-            .hero-title {
-              font-size: 2rem;
-            }
-
-            .cta-buttons {
-              flex-direction: column;
-            }
-          }
-        `}</style>
-
-        <section className="detail-container">
-          <Link href="/skills" className="text-slate hover:text-frost mb-8 inline-block">
+          <p style={{ fontFamily: 'var(--font-body)', color: 'var(--text-muted)', marginBottom: '24px' }}>
+            This boss hasn&apos;t been documented yet.
+          </p>
+          <Link href="/skills" className="pixel-btn pixel-btn-primary" style={{ fontFamily: 'var(--font-pixel)', fontSize: '0.7rem', letterSpacing: '1px', textTransform: 'uppercase' }}>
             ← Back to Skills
           </Link>
-
-          <div className="hero-section">
-            <h1 className="hero-title">{abbrevBoss.nameEn}</h1>
-            <p className="hero-tagline">{abbrevBoss.taglineEn}</p>
-          </div>
-
-          <div className="coming-soon">
-            <div className="coming-soon-text">📋 DOCUMENTATION IN PROGRESS 📋</div>
-            <p style={{ fontSize: '1rem', marginBottom: '12px' }}>
-              This boss profile is still being researched and documented. The full dossier with:
-            </p>
-            <ul style={{ textAlign: 'left', display: 'inline-block', marginBottom: '24px' }}>
-              <li>✓ Complete personality analysis</li>
-              <li>✓ Behavioral patterns</li>
-              <li>✓ Iconic quotes</li>
-              <li>✓ Communication modes</li>
-              <li>✓ Real-world examples</li>
-            </ul>
-            <p style={{ fontSize: '0.875rem', color: '#89aec8', fontStyle: 'italic' }}>
-              Will be available soon. Contribute on GitHub to help document this boss!
-            </p>
-          </div>
-
-          <div className="cta-buttons">
-            <PixelButton variant="primary" href="/skills">
-              ← Back to Encyclopedia
-            </PixelButton>
-            <PixelButton variant="success" href="https://github.com/KongZhen/boss-skills">
-              ⭐ Contribute
-            </PixelButton>
-          </div>
-        </section>
+        </div>
       </div>
     );
   }
 
+  const comingSoonName = !boss
+    ? slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+    : undefined;
+
   return (
-    <div className="bg-marine text-frost min-h-screen">
-      <style>{`
-        .detail-container {
-          max-width: 900px;
-          margin: 0 auto;
-          padding: 60px 20px;
-        }
-
-        .hero-section {
-          text-align: center;
-          margin-bottom: 48px;
-          padding: 32px;
-          border: 4px solid #89aec8;
-          background: rgba(137, 174, 200, 0.05);
-        }
-
-        .hero-title {
-          font-size: 3rem;
-          font-family: monospace;
-          font-weight: bold;
-          color: #f0f6f7;
-          margin-bottom: 12px;
-          letter-spacing: 2px;
-        }
-
-        .hero-tagline {
-          font-size: 1.125rem;
-          color: #89aec8;
-          font-family: monospace;
-          font-style: italic;
-        }
-
-        .hero-cn {
-          font-size: 1rem;
-          color: #89aec8;
-          margin-top: 8px;
-          font-family: monospace;
-        }
-
-        .section {
-          margin-bottom: 48px;
-        }
-
-        .section-title {
-          font-size: 1.75rem;
-          font-family: monospace;
-          font-weight: bold;
-          color: #f0f6f7;
-          margin-bottom: 20px;
-          padding-bottom: 12px;
-          border-bottom: 2px solid #89aec8;
-          letter-spacing: 1px;
-        }
-
-        .persona-file {
-          border: 4px solid #89aec8;
-          padding: 24px;
-          background: rgba(137, 174, 200, 0.05);
-          margin-bottom: 24px;
-        }
-
-        .persona-title {
-          font-size: 0.875rem;
-          color: #89aec8;
-          font-family: monospace;
-          font-weight: bold;
-          margin-bottom: 12px;
-          letter-spacing: 2px;
-        }
-
-        .persona-content {
-          font-size: 1rem;
-          line-height: 1.6;
-          color: #f0f6f7;
-        }
-
-        .behaviors-list {
-          list-style: none;
-          padding: 0;
-        }
-
-        .behaviors-list li {
-          padding: 12px;
-          margin-bottom: 8px;
-          border-left: 4px solid #f0a000;
-          background: rgba(240, 160, 0, 0.05);
-          color: #f0f6f7;
-        }
-
-        .behaviors-list li::before {
-          content: '► ';
-          color: #f0a000;
-          font-weight: bold;
-          margin-right: 8px;
-        }
-
-        .typical-lines {
-          display: grid;
-          gap: 16px;
-        }
-
-        .quote-block {
-          border-left: 4px solid #f0a000;
-          padding: 16px;
-          background: rgba(0, 44, 85, 0.5);
-          border: 2px solid #89aec8;
-          font-style: italic;
-          color: #f0f6f7;
-          font-family: monospace;
-          font-size: 0.95rem;
-          line-height: 1.5;
-        }
-
-        .modes-grid {
-          display: grid;
-          gap: 12px;
-        }
-
-        .mode-item {
-          border: 2px solid #89aec8;
-          padding: 16px;
-          background: rgba(137, 174, 200, 0.05);
-        }
-
-        .mode-label {
-          font-weight: bold;
-          color: #f0a000;
-          font-family: monospace;
-          margin-bottom: 8px;
-        }
-
-        .mode-desc {
-          color: #f0f6f7;
-          font-size: 0.95rem;
-        }
-
-        .example-section {
-          border: 3px solid #f0a000;
-          padding: 24px;
-          background: rgba(240, 160, 0, 0.05);
-        }
-
-        .example-input,
-        .example-output {
-          margin-bottom: 16px;
-        }
-
-        .example-label {
-          font-weight: bold;
-          color: #f0a000;
-          font-family: monospace;
-          margin-bottom: 8px;
-          font-size: 0.875rem;
-        }
-
-        .example-content {
-          background: #002c55;
-          border: 2px solid #89aec8;
-          padding: 16px;
-          color: #f0f6f7;
-          font-family: monospace;
-          font-size: 0.95rem;
-          line-height: 1.6;
-          white-space: pre-wrap;
-          word-break: break-word;
-        }
-
-        .cta-buttons {
-          display: flex;
-          gap: 12px;
-          justify-content: center;
-          margin-top: 40px;
-          flex-wrap: wrap;
-        }
-
-        .back-link {
-          display: inline-block;
-          margin-bottom: 24px;
-          color: #89aec8;
-          text-decoration: none;
-          font-family: monospace;
-          transition: all 0.2s ease;
-        }
-
-        .back-link:hover {
-          color: #f0f6f7;
-        }
-
-        @media (max-width: 640px) {
-          .detail-container {
-            padding: 40px 16px;
-          }
-
-          .hero-title {
-            font-size: 2rem;
-          }
-
-          .section-title {
-            font-size: 1.5rem;
-          }
-
-          .cta-buttons {
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <section className="detail-container">
-        <Link href="/skills" className="back-link">
-          ← Back to Skills Encyclopedia
-        </Link>
-
-        {/* HERO SECTION */}
-        <div className="hero-section">
-          <h1 className="hero-title">{boss.nameEn}</h1>
-          <p className="hero-cn">{boss.nameCn}</p>
-          <p className="hero-tagline">"{boss.taglineEn}"</p>
-          <p className="hero-cn" style={{ marginTop: '8px' }}>{boss.taglineCn}</p>
-        </div>
-
-        {/* PERSONA FILE */}
-        <section className="section">
-          <div className="section-title">📋 PERSONA FILE</div>
-          <div className="persona-file">
-            <div className="persona-title">DOSSIER ENTRY</div>
-            <div className="persona-content">{boss.descriptionEn}</div>
-          </div>
-        </section>
-
-        {/* CORE BEHAVIORS */}
-        <section className="section">
-          <div className="section-title">⚙️ CORE BEHAVIORS</div>
-          <ul className="behaviors-list">
-            {boss.behaviors.map((behavior, idx) => (
-              <li key={idx}>{behavior}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* TYPICAL LINES */}
-        <section className="section">
-          <div className="section-title">💬 TYPICAL LINES</div>
-          <div className="typical-lines">
-            {boss.typicalLines.map((line, idx) => (
-              <div key={idx} className="quote-block">
-                {line}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* COMMUNICATION MODES */}
-        <section className="section">
-          <div className="section-title">📡 COMMUNICATION MODES</div>
-          <div className="modes-grid">
-            {boss.communicationModes.map((mode, idx) => (
-              <div key={idx} className="mode-item">
-                <div className="mode-label">{mode.mode}</div>
-                <div className="mode-desc">{mode.description}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* EXAMPLE */}
-        <section className="section">
-          <div className="section-title">📊 REAL-WORLD EXAMPLE</div>
-          <div className="example-section">
-            <div className="example-input">
-              <div className="example-label">INPUT (What you say)</div>
-              <div className="example-content">{boss.example.input}</div>
-            </div>
-            <div className="example-output">
-              <div className="example-label">OUTPUT (What they respond)</div>
-              <div className="example-content">{boss.example.output}</div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA BUTTONS */}
-        <div className="cta-buttons">
-          <PixelButton variant="primary" href="/playground">
-            🎮 Try in Playground
-          </PixelButton>
-          <PixelButton variant="success" href="https://github.com/KongZhen/boss-skills">
-            📖 View Source on GitHub
-          </PixelButton>
-          <PixelButton variant="warning" href="/skills">
-            ← Back to Encyclopedia
-          </PixelButton>
-        </div>
-      </section>
-    </div>
+    <BossDetailContent
+      boss={boss || null}
+      isComingSoon={!boss}
+      comingSoonName={comingSoonName}
+    />
   );
 }
