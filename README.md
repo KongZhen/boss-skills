@@ -1,4 +1,8 @@
 <div align="center">
+<img width="2982" height="1602" alt="image" src="https://github.com/user-attachments/assets/f9963abe-946d-4495-beac-73bf82d2e5fb" />
+<img width="2980" height="1694" alt="image" src="https://github.com/user-attachments/assets/e3ac8ed1-87c5-40b8-b719-bafafed0f138" />
+<img width="2968" height="1804" alt="image" src="https://github.com/user-attachments/assets/1a5869d7-3ab0-4f88-9ad1-22abc95815d4" />
+<img width="2976" height="1812" alt="image" src="https://github.com/user-attachments/assets/23dcbb79-da64-4506-9751-9513be25d286" />
 
 # MY BOSS SKILLS
 
