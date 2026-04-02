@@ -1,4 +1,7 @@
 {
   "name": "boss-skills",
-  "pages_build_output_dir": "./out"
+  "compatibility_date": "2026-04-02",
+  "assets": {
+    "directory": "./out"
+  }
 }
