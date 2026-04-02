@@ -3,5 +3,9 @@
   "compatibility_date": "2026-04-02",
   "assets": {
     "directory": "./out"
-  }
+  },
+  "routes": [
+    { "pattern": "boss-skills.com", "custom_domain": true },
+    { "pattern": "www.boss-skills.com", "custom_domain": true }
+  ]
 }
