@@ -1,148 +1,30 @@
 @import "tailwindcss";
-@import "nes.css/css/nes.css";
 
-:root {
-  /* Boss Skills Color Palette */
-  --marine: #002c55;
-  --frost: #f0f6f7;
-  --slate: #89aec8;
-  --gold: #f0a000;
-  --dark: #1a1a1a;
-
-  --background: var(--marine);
-  --foreground: var(--frost);
-}
-
+/* ─────────────────────────────────────────────────────────────
+   Tailwind v4 theme tokens — generate utility classes like
+   bg-marine, text-frost, text-slate, text-gold, bg-dark etc.
+   Used by skills/, playground/, and [slug]/ pages.
+───────────────────────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-marine: var(--marine);
-  --color-frost: var(--frost);
-  --color-slate: var(--slate);
-  --color-gold: var(--gold);
-  --color-dark: var(--dark);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-marine:     #002c55;
+  --color-frost:      #f0f6f7;
+  --color-slate:      #89aec8;
+  --color-gold:       #f0a000;
+  --color-dark:       #1a1a1a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--marine);
-    --foreground: var(--frost);
-  }
-}
-
-html {
-  background: var(--background);
-  color: var(--foreground);
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Pixel-perfect rendering */
-* {
+/* ─────────────────────────────────────────────────────────────
+   Global rendering
+───────────────────────────────────────────────────────────── */
+img, video, canvas {
   image-rendering: pixelated;
 }
 
-/* Custom color classes */
-.text-frost {
-  color: var(--frost);
-}
+/* ── Hide Next.js dev indicator badge ── */
+nextjs-portal { display: none !important; }
 
-.text-slate {
-  color: var(--slate);
-}
-
-.text-marine {
-  color: var(--marine);
-}
-
-.text-gold {
-  color: var(--gold);
-}
-
-.bg-marine {
-  background-color: var(--marine);
-}
-
-.bg-dark {
-  background-color: var(--dark);
-}
-
-.border-frost {
-  border-color: var(--frost);
-}
-
-.border-slate {
-  border-color: var(--slate);
-}
-
-.border-gold {
-  border-color: var(--gold);
-}
-
-/* Pixel font styles */
-.pixel-text {
-  font-family: monospace;
-  letter-spacing: 1px;
-}
-
-/* NES.css overrides for Boss Skills theme */
-.nes-container {
-  border-color: var(--slate);
-  background-color: rgba(0, 44, 85, 0.8);
-}
-
-.nes-btn {
-  border-color: var(--frost);
-  background-color: var(--slate);
-  color: var(--marine);
-  font-family: monospace;
-  font-weight: bold;
-}
-
-.nes-btn:hover {
-  background-color: var(--frost);
-  box-shadow: 0 0 12px rgba(240, 246, 247, 0.3);
-}
-
-.nes-btn.is-primary {
-  background-color: var(--slate);
-  border-color: var(--frost);
-}
-
-.nes-btn.is-success {
-  background-color: #4caf50;
-}
-
-.nes-btn.is-warning {
-  background-color: var(--gold);
-}
-
-.nes-btn.is-error {
-  background-color: #f44336;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--marine);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--slate);
-  border: 2px solid var(--marine);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--frost);
-}
+/* Smooth scrollbars */
+::-webkit-scrollbar        { width: 10px; }
+::-webkit-scrollbar-track  { background: var(--bg-secondary, #ede8dc); }
+::-webkit-scrollbar-thumb  { background: var(--border-color, rgba(0,0,0,0.15)); border: 2px solid var(--bg-secondary, #ede8dc); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted, #888); }

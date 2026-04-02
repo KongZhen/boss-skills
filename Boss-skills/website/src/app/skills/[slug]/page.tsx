@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import 'nes.css/css/nes.css';
 import PixelButton from '@/components/PixelButton';
 
 interface BossDetail {
@@ -521,7 +522,7 @@ export default async function BossDetailPage({ params }: PageProps) {
             <PixelButton variant="primary" href="/skills">
               ← Back to Encyclopedia
             </PixelButton>
-            <PixelButton variant="success" href="https://github.com/boss-skills">
+            <PixelButton variant="success" href="https://github.com/KongZhen/boss-skills">
               ⭐ Contribute
             </PixelButton>
           </div>
@@ -815,7 +816,7 @@ export default async function BossDetailPage({ params }: PageProps) {
           <PixelButton variant="primary" href="/playground">
             🎮 Try in Playground
           </PixelButton>
-          <PixelButton variant="success" href="https://github.com/boss-skills">
+          <PixelButton variant="success" href="https://github.com/KongZhen/boss-skills">
             📖 View Source on GitHub
           </PixelButton>
           <PixelButton variant="warning" href="/skills">

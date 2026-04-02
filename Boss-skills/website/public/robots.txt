@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boss-skills.com/sitemap.xml

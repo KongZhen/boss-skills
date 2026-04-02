@@ -5,10 +5,10 @@ export function Footer() {
     <footer className="site-footer">
       <p style={{ marginBottom: '8px' }}>
         <Link href="/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>MY BOSS SKILLS</Link>
-        {' '}&copy; 2025 &mdash; Made with ❌ love and 💀 suffering
+        {' '}&copy; 2025 &mdash; Made with mass suffering
       </p>
       <p style={{ lineHeight: 1.8, color: 'var(--text-muted)' }}>
-        <a href="https://github.com/anthropics/boss-skills" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/KongZhen/boss-skills" target="_blank" rel="noopener noreferrer">GitHub</a>
         {' · '}
         <Link href="/contribute">Contribute</Link>
         {' · '}
