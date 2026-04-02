@@ -61,6 +61,7 @@ function detectAITools() {
 
   const toolPaths = [
     { name: 'claude', dir: '.claude', skillDir: 'skills', check: '.claude' },
+    { name: 'openclaw', dir: '.openclaw', skillDir: 'skills', check: '.openclaw' },
     { name: 'cursor', dir: '.cursor', skillDir: 'rules', check: '.cursor/rules' },
     { name: 'gemini', dir: '.gemini', skillDir: 'skills', check: '.gemini' },
     { name: 'codex', dir: '.codex', skillDir: 'skills', check: '.codex' },
@@ -133,8 +134,8 @@ async function installBoss(skillName, targetPath) {
     return false;
   }
 
-  // Files to download
-  const files = ['SKILL.en.md', 'SKILL.zh-CN.md', 'skill.yaml', 'assistant.json'];
+  // Files to download (SKILL.md = OpenClaw-compatible entry point)
+  const files = ['SKILL.md', 'SKILL.en.md', 'SKILL.zh-CN.md', 'skill.yaml', 'assistant.json'];
   let successCount = 0;
 
   process.stdout.write(`  Downloading ${skillName}... `);
@@ -188,6 +189,9 @@ async function installCommand(args) {
     const targetPath = found.length > 0 ? found[0] : defaultPath;
     log(`\n${colors.bright}Installing all bosses...${colors.reset}`);
     info(`Installing to: ${targetPath.name} (${targetPath.baseDir})`);
+    if (found.length > 1) {
+      info(`Also detected: ${found.slice(1).map(f => f.name).join(', ')} (use --target=<tool> to change)`);
+    }
 
     let successCount = 0;
     for (const boss of AVAILABLE_BOSSES) {
@@ -270,7 +274,7 @@ async function main() {
 
   if (args.length === 0) {
     log('\n' + colors.bright + '╔════════════════════════════════════╗', 'magenta');
-    log('║        Boss Skills CLI v0.1.0       ║', 'magenta');
+    log('║        Boss Skills CLI v0.2.0       ║', 'magenta');
     log('╚════════════════════════════════════╝' + colors.reset, 'magenta');
     log('\nUsage:', 'yellow');
     log('  boss-skills install <boss-name>  Install a boss skill');

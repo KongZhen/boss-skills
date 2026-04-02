@@ -1,12 +1,12 @@
 {
   "name": "boss-skills",
-  "version": "0.1.0",
-  "description": "Install boss skill personas into your AI tool. A serious framework for unserious bosses.",
+  "version": "0.2.0",
+  "description": "Install boss skill personas into your AI tool (Claude, OpenClaw, Cursor, Gemini, Codex). A serious framework for unserious bosses.",
   "bin": {
     "boss-skills": "./bin/boss-skills.mjs"
   },
   "type": "module",
-  "keywords": ["ai", "skills", "claude", "cursor", "boss", "persona", "satire"],
+  "keywords": ["ai", "skills", "claude", "openclaw", "cursor", "gemini", "boss", "persona", "satire"],
   "repository": {
     "type": "git",
     "url": "https://github.com/KongZhen/boss-skills"

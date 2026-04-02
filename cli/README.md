@@ -33,6 +33,7 @@ boss-skills install boss.passive-aggressive
 
 Automatically detects your AI tool and installs the skill:
 - **Claude Code** → `~/.claude/skills/`
+- **OpenClaw** → `~/.openclaw/skills/`
 - **Cursor** → `~/.cursor/rules/`
 - **Gemini CLI** → `~/.gemini/skills/`
 - **Codex CLI** → `~/.codex/skills/`

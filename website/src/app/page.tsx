@@ -1934,8 +1934,8 @@ function GetStartedSection() {
 
             <div className="supported-tools">
               {zh
-                ? '支持: Claude Code · Cursor · Gemini CLI · Codex CLI'
-                : 'Works with: Claude Code · Cursor · Gemini CLI · Codex CLI'}
+                ? '支持: Claude Code · OpenClaw · Cursor · Gemini CLI · Codex CLI'
+                : 'Works with: Claude Code · OpenClaw · Cursor · Gemini CLI · Codex CLI'}
             </div>
 
             {/* Expandable other methods */}
@@ -1952,12 +1952,16 @@ function GetStartedSection() {
               </div>
               <div className={`other-methods-list${expandOther ? ' open' : ''}`}>
                 <div className="method-item">
+                  <div className="method-label">OpenClaw</div>
+                  <div className="method-code">{'cp -r skills/boss.micromanager ~/.openclaw/skills/'}</div>
+                </div>
+                <div className="method-item">
                   <div className="method-label">Claude Code Plugin</div>
                   <div className="method-code">claude plugin add boss-skills</div>
                 </div>
                 <div className="method-item">
-                  <div className="method-label">{zh ? '手动安装' : 'Manual Install'}</div>
-                  <div className="method-code">cp -r skills/boss.micromanager /path/to/.claude/skills/</div>
+                  <div className="method-label">{zh ? '手动安装 (通用)' : 'Manual Install (Generic)'}</div>
+                  <div className="method-code">{'cp -r skills/boss.micromanager /path/to/<tool>/skills/'}</div>
                 </div>
               </div>
             </div>
